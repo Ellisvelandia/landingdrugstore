@@ -1,34 +1,40 @@
 import { notFound } from "next/navigation";
 
+// Define the Params type
 interface Params {
   categoryId: string;
 }
 
-const categoryData: { [key: string]: { title: string; description: string } } =
-  {
-    "weight-management": {
-      title: "Weight Management",
-      description: "Products to help you achieve your weight goals.",
-    },
-    "winter-skincare": {
-      title: "Winter Skincare",
-      description: "Essential skincare products for the winter season.",
-    },
-    vitamins: {
-      title: "Vitamins",
-      description: "Boost your health with our range of vitamins.",
-    },
-    "cold-flu": {
-      title: "Cold & Flu",
-      description: "Stay healthy with cold and flu remedies.",
-    },
-  };
+// Define the category data
+const categoryData: Record<string, { title: string; description: string }> = {
+  "weight-management": {
+    title: "Weight Management",
+    description: "Products to help you achieve your weight goals.",
+  },
+  "winter-skincare": {
+    title: "Winter Skincare",
+    description: "Essential skincare products for the winter season.",
+  },
+  vitamins: {
+    title: "Vitamins",
+    description: "Boost your health with our range of vitamins.",
+  },
+  "cold-flu": {
+    title: "Cold & Flu",
+    description: "Stay healthy with cold and flu remedies.",
+  },
+};
 
+// Category Page Component
 export default async function CategoryPage({ params }: { params: Params }) {
   const { categoryId } = params;
 
+  // Log the received categoryId for debugging
+  console.log("Received categoryId:", categoryId);
+
   // Ensure categoryId is a valid key in categoryData
   if (!categoryData[categoryId]) {
+    console.error(`Category not found for categoryId: ${categoryId}`);
     notFound(); // Show 404 page if the category doesn't exist
   }
 
@@ -51,6 +57,7 @@ export async function generateStaticParams() {
     { id: "vitamins" },
     { id: "cold-flu" },
   ];
+
   return categories.map((category) => ({
     categoryId: category.id,
   }));
