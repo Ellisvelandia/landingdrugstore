@@ -1,23 +1,22 @@
 import React from "react";
 import Image from "next/image";
 
-// Updated Promotions Data with Free Stock Images
 const promos = [
   {
     title: "Hair Care",
-    img: "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/images/logo.png",
   },
   {
     title: "Hair Loss",
-    img: "https://img.freepik.com/foto-gratis/vista-frontal-surtido-productos-ecologicos_23-2148491140.jpg?t=st=1738265505~exp=1738269105~hmac=77b95fe8acaa93615084043f81120baf7ceb01c8f7f0009167ab6ba1c0039414&w=360",
+    img: "/images/logo.png",
   },
   {
     title: "Fragrance",
-    img: "https://img.freepik.com/foto-gratis/bodegon-productos-cosmeticos_23-2149163156.jpg?t=st=1738265541~exp=1738269141~hmac=e110fc85cbcb31e598b63cb044150ad0f6ff27686ff4b6817b070dc7dc293b4c&w=360",
+    img: "/images/logo.png",
   },
   {
     title: "Electricals",
-    img: "https://img.freepik.com/foto-gratis/guante-equipo-peluqueria_23-2147711556.jpg?t=st=1738265611~exp=1738269211~hmac=3cac36d320b926c995f04b021a00d9b23fb009789bcb04db568b66e35815a2ea&w=740",
+    img: "/images/logo.png",
   },
 ];
 

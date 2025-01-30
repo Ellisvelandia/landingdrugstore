@@ -7,25 +7,25 @@ const products = [
     id: "p1",
     title: "SimFast Milkshake",
     price: "COP$7,117",
-    img: "/images/product1.jpg",
+    img: "/images/logo.png",
   },
   {
     id: "p2",
     title: "Nicorette Gum",
     price: "COP$10,205",
-    img: "/images/product2.jpg",
+    img: "/images/logo.png",
   },
   {
     id: "p3",
     title: "Paracetamol 600mg",
     price: "COP$5,390",
-    img: "/images/product3.jpg",
+    img: "/images/logo.png",
   },
   {
     id: "p4",
     title: "Optrex Eye Drops",
     price: "COP$48,950",
-    img: "/images/product4.jpg",
+    img: "/images/logo.png",
   },
 ];
 
