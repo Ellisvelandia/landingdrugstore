@@ -1,10 +1,5 @@
 import { notFound } from "next/navigation";
 
-// Define the Params type
-interface Params {
-  categoryId: string;
-}
-
 // Define the category data
 const categoryData: Record<string, { title: string; description: string }> = {
   "weight-management": {
@@ -26,7 +21,7 @@ const categoryData: Record<string, { title: string; description: string }> = {
 };
 
 // Category Page Component
-export default async function CategoryPage({ params }: { params: Params }) {
+export default async function CategoryPage({ params }: { params: { categoryId: string } }) {
   const { categoryId } = params;
 
   // Log the received categoryId for debugging
