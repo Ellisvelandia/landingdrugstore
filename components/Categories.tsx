@@ -1,5 +1,4 @@
 "use client"; // Required for client-side navigation
-
 import Image from "next/image";
 import Link from "next/link";
 import { Autoplay } from "swiper/modules";
@@ -7,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Import Swiper styles
 import "swiper/css/autoplay"; // Import Autoplay module styles
 
+// Define the categories data
 const categories = [
   {
     title: "Weight Management",
@@ -31,6 +31,9 @@ const categories = [
 ];
 
 export default function Categories() {
+  // Duplicate the slides programmatically to enable loop mode
+  const duplicatedCategories = [...categories, ...categories];
+
   return (
     <section className="mx-auto mt-12 max-w-7xl px-4">
       {/* Section Title */}
@@ -43,7 +46,7 @@ export default function Categories() {
         modules={[Autoplay]}
         spaceBetween={24} // Space between slides
         slidesPerView="auto" // Responsive number of slides
-        loop={true} // Infinite loop
+        loop={true} // Enable infinite loop
         autoplay={{
           delay: 3000, // Auto-scroll every 3 seconds
           disableOnInteraction: false, // Keep autoplay active even after user interaction
@@ -61,8 +64,8 @@ export default function Categories() {
         }}
         className="flex w-full"
       >
-        {categories.map((cat) => (
-          <SwiperSlide key={cat.title}>
+        {duplicatedCategories.map((cat, index) => (
+          <SwiperSlide key={`${cat.title}-${index}`}>
             <Link
               href={`/categories/${cat.slug}`} // Navigate to the category page
               className="group relative block overflow-hidden rounded-2xl bg-gray-900 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl"
@@ -79,7 +82,6 @@ export default function Categories() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
               </div>
-
               {/* Content Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-xl font-bold text-white">{cat.title}</p>
