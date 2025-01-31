@@ -29,8 +29,9 @@ export default function Navbar() {
           />
           <p className="text-xs text-gray-600">Powered by ePharmacy</p>
         </div>
+
         {/* Center: Search */}
-        <div className="flex flex-1 justify-center px-6">
+        <div className="hidden flex-1 justify-center px-6 sm:flex">
           <div className="relative w-full max-w-xl">
             <input
               type="text"
@@ -47,6 +48,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+
         {/* Right: Icons */}
         <div className="flex items-center gap-6">
           <a
@@ -111,6 +113,26 @@ export default function Navbar() {
           </a>
         </div>
       </div>
+
+      {/* Mobile Search Bar */}
+      <div className="mt-4 flex justify-center sm:hidden">
+        <div className="relative w-full max-w-xl">
+          <input
+            type="text"
+            placeholder="Search by product, brand, or condition"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:border-blue-500 focus:bg-white focus:outline-none"
+          />
+          <button
+            onClick={handleSearch}
+            className="absolute right-2 top-1.5 rounded-md bg-blue-600 px-4 py-1.5 text-sm text-white transition-colors hover:bg-blue-700"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+
       {/* Secondary Nav */}
       <nav className="mx-auto mt-3 max-w-7xl">
         <ul className="flex flex-wrap items-center gap-6 text-sm">
@@ -136,6 +158,7 @@ export default function Navbar() {
           ))}
         </ul>
       </nav>
+
       {/* Trustpilot Rating */}
       <div className="mx-auto mt-2 max-w-7xl text-sm font-medium text-emerald-700">
         ⭐️ 4.7 out of 5 on Trustpilot from over 45,000 reviews
