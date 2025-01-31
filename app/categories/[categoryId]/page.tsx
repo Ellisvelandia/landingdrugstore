@@ -24,10 +24,9 @@ const categoryData: Record<string, { title: string; description: string }> = {
 export default async function CategoryPage({
   params,
 }: {
-  params: { categoryId: string };
+  params: { categoryId: string }; // Correctly typed as a plain object
 }) {
-  // Await the params before using its properties
-  const { categoryId } = await params;
+  const { categoryId } = await params; // Await the params before destructuring
 
   // Log the received categoryId for debugging
   console.log("Received categoryId:", categoryId);
@@ -35,7 +34,7 @@ export default async function CategoryPage({
   // Ensure categoryId is a valid key in categoryData
   if (!categoryData[categoryId]) {
     console.error(`Category not found for categoryId: ${categoryId}`);
-    notFound(); // Show 404 page if the category doesn't exist
+    return notFound(); // Show 404 page if the category doesn't exist
   }
 
   const category = categoryData[categoryId];
