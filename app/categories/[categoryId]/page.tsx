@@ -21,8 +21,13 @@ const categoryData: Record<string, { title: string; description: string }> = {
 };
 
 // Category Page Component
-export default async function CategoryPage({ params }: { params: { categoryId: string } }) {
-  const { categoryId } = params;
+export default async function CategoryPage({
+  params,
+}: {
+  params: { categoryId: string };
+}) {
+  // Await the params before using its properties
+  const { categoryId } = await params;
 
   // Log the received categoryId for debugging
   console.log("Received categoryId:", categoryId);

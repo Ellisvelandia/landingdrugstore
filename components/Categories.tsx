@@ -1,4 +1,5 @@
 "use client"; // Required for client-side navigation
+
 import Image from "next/image";
 import Link from "next/link";
 import { Autoplay } from "swiper/modules";
