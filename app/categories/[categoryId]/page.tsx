@@ -24,9 +24,10 @@ const categoryData: Record<string, { title: string; description: string }> = {
 export default async function CategoryPage({
   params,
 }: {
-  params: { categoryId: string }; // Correctly typed as a plain object
+  params: Promise<{ categoryId: string }>; // Correctly typed as a Promise
 }) {
-  const { categoryId } = await params; // Await the params before destructuring
+  // Await the params before destructuring
+  const { categoryId } = await params;
 
   // Log the received categoryId for debugging
   console.log("Received categoryId:", categoryId);
