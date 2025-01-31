@@ -11,22 +11,22 @@ const categories = [
   {
     title: "Weight Management",
     img: "/images/weight.png", // Ensure this image exists in /public/images/
-    slug: "weight-management", // Matches categoryId in [categoryId]/page.tsx
+    categoryId: "weight-management", // Matches categoryId in [categoryId]/page.tsx
   },
   {
     title: "Winter Skincare",
     img: "/images/winter.png",
-    slug: "winter-skincare",
+    categoryId: "winter-skincare",
   },
   {
     title: "Vitamins",
     img: "/images/vitamins.png",
-    slug: "vitamins",
+    categoryId: "vitamins",
   },
   {
     title: "Cold & Flu",
     img: "/images/cold.png",
-    slug: "cold-flu",
+    categoryId: "cold-flu",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function Categories() {
         {duplicatedCategories.map((cat, index) => (
           <SwiperSlide key={`${cat.title}-${index}`}>
             <Link
-              href={`/categories/${cat.slug}`} // Navigate to the category page
+              href={`/categories/${cat.categoryId}`} // Navigate to the category page
               className="group relative block overflow-hidden rounded-2xl bg-gray-900 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               {/* Image Container */}
