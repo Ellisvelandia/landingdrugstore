@@ -73,6 +73,8 @@ export default function Categories() {
                   src={cat.img}
                   alt={cat.title}
                   fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />

@@ -41,6 +41,8 @@ export default function Promotions() {
                 src={item.img}
                 alt={item.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>
